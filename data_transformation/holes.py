@@ -70,6 +70,7 @@ def fill_na(df):
 def cast_to_types(df):
     df = df.astype(
         {
+            "uuid": str,
             "center_x": float,
             "center_y": float,
             "center_z": float,

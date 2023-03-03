@@ -21,6 +21,11 @@ def calculate(df):
     df = calculate_sheet_like_shape_fields(df)
     df = calculate_unmachinable_edges_fields(df)
     df = remove_old_fields(df)
+    df = df.astype(
+        {
+            "uuid": str,
+        }
+    )
 
     return df
 
@@ -88,7 +93,7 @@ def calculate_unmachinable_edges_fields(df):
         lambda x: int(x["count"]) if "count" in x else False
     )
     df["unmachinable_edges_list_url"] = df.unmachinable_edges.apply(
-        lambda x: x["edge_list_url"] if "edge_list_url" in x else False
+        lambda x: str(x["edge_list_url"]) if "edge_list_url" in x else False
     )
     df["unmachinable_edges_length"] = df.unmachinable_edges.apply(
         lambda x: float(x["length"]) if "length" in x else False

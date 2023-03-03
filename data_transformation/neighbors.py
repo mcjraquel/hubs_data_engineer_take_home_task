@@ -43,6 +43,7 @@ def calculate_fields(df):
 def cast_to_types(df):
     df = df.astype(
         {
+            "uuid": str,
             "neighbor": int,
         }
     )

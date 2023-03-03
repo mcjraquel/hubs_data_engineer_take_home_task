@@ -71,6 +71,7 @@ def fill_na(df):
 def cast_to_types(df):
     df = df.astype(
         {
+            "uuid": str,
             "box_volume": float,
             "direction_removable_volume": str,
             "is_machinable": bool,

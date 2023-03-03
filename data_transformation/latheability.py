@@ -55,6 +55,7 @@ def fill_na(df):
 def cast_to_types(df):
     df = df.astype(
         {
+            "uuid": str,
             "axis_x": int,
             "axis_y": int,
             "axis_z": int,
