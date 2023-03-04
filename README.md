@@ -15,12 +15,12 @@ There are three very important files in this repo:
 1. `unreachable_holes_solution.py`
    This accepts no argument (automatically takes the given Parquet file) and this will ask if the user would like to export the raw data with the two additional columns to a CSV file. This has already been executed and the resulting CSV file can be found in the same directory.
 2. `data_transformation\main.py`
-   This also accepts no argument (automatically takes the given Parquet file) and this will also ask if the user would like to export the transformed tables to CSV files. This has already been executed and the resulting CSV files can be found in the same directory as well.
+   This also accepts no argument (automatically takes the given Parquet file) and this will also ask if the user would like to export the transformed tables to CSV files. This has already been executed and the resulting CSV files can be found in the same directory as well. The specifics of how I transformed the `holes` column of the raw data can be found in the `data_transformation\holes.py` file.
 
     Additionally, the `main` function of this file returns a dictionary of table names and corresponding DataFrames. This can be imported and called within the repo so that the user can access the transformed data (as demonstrated in file #3).
 
 3. `insights.ipynb`
-   This is where I put down my observations and insights on the raw data, transform the data using the `main` function from file #2, and try to gain insights on the holes data.
+   This is where I put down my observations and insights on the raw data, transform the data using the `main` function from file #2, and try to gain insights on the holes data. I also solve the unreachable holes problem here using SQL queries on the transformed `holes` table.
 
 Assumptions while solving the problem:
 
